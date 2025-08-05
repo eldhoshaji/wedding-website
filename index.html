@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eldho & Christeena - Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;500;700&family=Elsie:wght@400;900&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/moonstone" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/optimized/logo-ec.png">
+    <link rel="preload" as="image" href="images/optimized/you-are-invited.PNG">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+                    <div class="nav-logo">
+            <img src="images/optimized/logo-ec.png" alt="EC Logo" class="logo-image" loading="eager">
+        </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#countdown">Countdown</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">SAVE</h1>
+                    <h2 class="hero-subtitle">THE</h2>
+                    <h3 class="hero-date-title">DATES</h3>
+                    <div class="hero-invitation">
+                        <img src="images/optimized/you-are-invited.PNG" alt="You are invited" class="invitation-image" loading="eager">
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <a href="save-the-date-video.html" class="timeline-link">
+                        <div class="timeline-circle" data-number="1">
+                            <img src="images/optimized/timeline-1.jpeg" alt="We Met" loading="lazy" sizes="200px" srcset="images/optimized/timeline-1.jpeg 200w, images/optimized/timeline-1.jpeg 400w">
+                            <div class="timeline-caption">
+                                <div class="timeline-date">23 Sept 2022</div>
+                                <div class="timeline-title">STORIES OF OPENING</div>
+                            </div>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-caption-desktop">
+                            <div class="timeline-date">23 Sept 2022</div>
+                            <div class="timeline-title">STORIES OF OPENING</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="timeline-item">
+                    <a href="engagement.html" class="timeline-link">
+                        <div class="timeline-circle" data-number="2">
+                            <img src="images/optimized/timeline-2.jpeg" alt="Engagement" loading="lazy" sizes="200px" srcset="images/optimized/timeline-2.jpeg 200w, images/optimized/timeline-2.jpeg 400w">
+                            <div class="timeline-caption">
+                                <div class="timeline-date">15 Dec 2023</div>
+                                <div class="timeline-title">ENGAGEMENT</div>
+                            </div>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-caption-desktop">
+                            <div class="timeline-date">15 Dec 2023</div>
+                            <div class="timeline-title">ENGAGEMENT</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="timeline-item">
+                    <a href="wedding.html" class="timeline-link">
+                        <div class="timeline-circle" data-number="3">
+                            <img src="images/optimized/timeline-3.jpeg" alt="Wedding" loading="lazy" sizes="200px" srcset="images/optimized/timeline-3.jpeg 200w, images/optimized/timeline-3.jpeg 400w">
+                            <div class="timeline-caption">
+                                <div class="timeline-date">25 Feb 2024</div>
+                                <div class="timeline-title">WEDDING</div>
+                            </div>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-caption-desktop">
+                            <div class="timeline-date">25 Feb 2024</div>
+                            <div class="timeline-title">WEDDING</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section">
+        <div class="container">
+            <h2 class="section-title">COUNTING DOWN TO OUR SPECIAL DAY</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">OUR STORY IN PICTURES</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/optimized/gallery-1.jpg" alt="Eldho & Christeena" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="images/optimized/gallery-1.jpg 300w, images/optimized/gallery-1.jpg 600w, images/optimized/gallery-1.jpg 900w" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/optimized/gallery-2.jpeg" alt="Eldho & Christeena" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="images/optimized/gallery-2.jpeg 300w, images/optimized/gallery-2.jpeg 600w, images/optimized/gallery-2.jpeg 900w" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/optimized/gallery-3.jpeg" alt="Eldho & Christeena" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="images/optimized/gallery-3.jpeg 300w, images/optimized/gallery-3.jpeg 600w, images/optimized/gallery-3.jpeg 900w" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/optimized/gallery-4.JPG" alt="Eldho & Christeena" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="images/optimized/gallery-4.JPG 300w, images/optimized/gallery-4.JPG 600w, images/optimized/gallery-4.JPG 900w" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/optimized/gallery-5.jpeg" alt="Eldho & Christeena" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="images/optimized/gallery-5.jpeg 300w, images/optimized/gallery-5.jpeg 600w, images/optimized/gallery-5.jpeg 900w" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/optimized/gallery-6.jpeg" alt="Eldho & Christeena" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="images/optimized/gallery-6.jpeg 300w, images/optimized/gallery-6.jpeg 600w, images/optimized/gallery-6.jpeg 900w" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Eldho & Christeena. Made with <i class="fas fa-heart"></i> for our special day.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
