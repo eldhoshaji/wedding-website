@@ -701,6 +701,7 @@ body {
         word-wrap: break-word;
         padding: 0 5px;
         max-width: 95%;
+        margin-top: 35%;
     }
     
     .hero-subtitle {
@@ -808,6 +809,7 @@ body {
         word-wrap: break-word;
         padding: 0 3px;
         max-width: 98%;
+        margin-top: 35%;
     }
     
     .hero-subtitle {
