@@ -117,7 +117,7 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="engagement.html" class="nav-link">Engagement</a>
+                <a href="engagement.html" class="nav-link">Engagement &nbsp;<i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </nav>
@@ -210,7 +210,7 @@
                         <div class="card-content">
                             <p class="card-reception">To Follow</p>
                             <p class="card-subtitle">After the ceremony</p>
-                            <a href="#" class="card-button">
+                            <a href="#" class="card-button menu-download-btn disabled">
                                 <i class="fas fa-download"></i>
                                 Download Menu
                             </a>
@@ -371,12 +371,11 @@
             const eventTitle = "Eldho & Christeena's Wedding";
             const eventDescription = "Join us for our wedding celebration at St. George Jacobite Syrian Cathedral, Karingachira, Ernakulam. A beautiful morning of love, family, and new beginnings.";
             const eventLocation = "St. George Jacobite Syrian Cathedral, Karingachira, Ernakulam, Kerala";
-            const eventStart = "2025-08-30T10:00:00";
-            const eventEnd = "2025-08-30T12:00:00";
+            // Google Calendar expects YYYYMMDDTHHMMSS format (local time)
+            const eventStart = "20250830T100000";
+            const eventEnd = "20250830T140000";
             const mapUrl = "https://www.google.com/maps?rlz=1C1GCEU_en-GBGB1099GB1099&gs_lcrp=EgZjaHJvbWUqDAgBECMYJxiABBiKBTIGCAAQRRg5MgwIARAjGCcYgAQYigUyDQgCEC4YrwEYxwEYgAQyDQgDEC4YrwEYxwEYgAQyBwgEEAAYgAQyBwgFEAAYgAQyDQgGEC4YrwEYxwEYgAQyDQgHEC4YrwEYxwEYgAQyDQgIEC4YrwEYxwEYgAQyBwgJEAAYgATSAQgzOTE3ajBqNKgCALACAQ&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=KQlFYIFecwg7MfWTtY4ri-3P&daddr=Karingachira,+Thrippunithura,+Ernakulam,+Kerala+682301,+India";
-            
             const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&details=${encodeURIComponent(eventDescription + '\n\nMap: ' + mapUrl)}&location=${encodeURIComponent(eventLocation)}`;
-            
             window.open(calendarUrl, '_blank');
         }
     </script>
