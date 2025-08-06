@@ -1,3 +1,70 @@
+/* Timeline desktop overlay and arrow */
+.timeline-overlay-desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .timeline-overlay-desktop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    border-radius: 200px;
+    transition: background 0.3s;
+  }
+  .timeline-circle:hover .timeline-overlay-desktop {
+    display: flex;
+  }
+  .timeline-arrow-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: #fff;
+    opacity: 0.95;
+    animation: arrow-move 1s infinite alternate;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+  }
+}
+/* Timeline arrow for mobile (moved from index.html) */
+.timeline-arrow {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .timeline-arrow {
+    display: inline-block;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    animation: arrow-move 1s infinite alternate;
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.2s;
+  }
+  .timeline-title-with-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    width: 100%;
+    margin-top: 0.2em;
+  }
+  .timeline-title-with-arrow .timeline-title {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes arrow-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(10px); }
+}
 /* Font Face Declaration */
 @font-face {
     font-family: 'La Mango';
