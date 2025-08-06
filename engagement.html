@@ -34,7 +34,7 @@
                  </a>
              </div>
              <div class="nav-links">
-                 <a href="wedding.html" class="nav-link">Wedding</a>
+                 <a href="wedding.html" class="nav-link">Wedding &nbsp;<i class="fas fa-arrow-right"></i></a>
              </div>
          </div>
      </nav>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="detail-label">Date & Time</div>
                             <div class="detail-value">August 24th, 2025</div>
-                            <div class="detail-subtitle">12:00 AM</div>
+                            <div class="detail-subtitle">12:00 PM</div>
                         </div>
                         <div class="detail-buttons">
                             <button class="calendar-save-btn" onclick="saveToCalendar()">
@@ -109,7 +109,7 @@
                             <div class="detail-subtitle">After the ceremony</div>
                         </div>
                         <div class="detail-buttons">
-                            <a href="images/reception-menu.pdf" target="_blank" class="menu-download-btn">
+                            <a href="images/reception-menu.pdf" target="_blank" class="menu-download-btn disabled">
                                 <i class="fas fa-download"></i> Download Menu
                             </a>
                         </div>
@@ -349,16 +349,13 @@
 
          function saveToCalendar() {
              const eventTitle = "Eldho & Christeena's Engagement";
-             const eventDescription = "Join us for our engagement celebration at Mar Sleeva Syro-Malabar Church, Kanjiramattom, Pala. A beautiful evening of love, family, and new beginnings.";
+             const eventDescription = "Join us for our engagement celebration at Mar Sleeva Syro-Malabar Church, Kanjiramattom, Pala. A beautiful afternoon of love, family, and new beginnings.";
              const eventLocation = "Mar Sleeva Syro-Malabar Church, Kanjiramattom, Pala";
-             const eventStart = "2024-08-24T18:00:00";
-             const eventEnd = "2024-08-24T21:00:00";
+             // Google Calendar expects YYYYMMDDTHHMMSS format (local time)
+             const eventStart = "20240824T120000";
+             const eventEnd = "20240824T140000";
              const mapUrl = "https://www.google.co.uk/maps/place/Mar+Sleeva+Syro-Malabar+Church+Kanjiramattom/@9.6316375,76.6861907,17z/data=!3m1!4b1!4m6!3m5!1s0x3b07cd34d52d2e2b:0xac2635c7cf646da7!8m2!3d9.6316375!4d76.6887656!16s%2Fg%2F1tfb9l4d?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D";
-             
-             // Create calendar URL with all details
              const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&details=${encodeURIComponent(eventDescription + '\n\nMap: ' + mapUrl)}&location=${encodeURIComponent(eventLocation)}`;
-             
-             // Open calendar in new tab
              window.open(calendarUrl, '_blank');
          }
      </script>

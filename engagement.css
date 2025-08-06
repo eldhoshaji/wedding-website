@@ -941,3 +941,9 @@
     backdrop-filter: blur(2px);
     pointer-events: none;
 } 
+
+.menu-download-btn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}

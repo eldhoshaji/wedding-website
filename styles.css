@@ -252,7 +252,7 @@ body {
 }
 
 .timeline-circle {
-    width: 200px;
+    width: 220px;
     height: 400px;
     border-radius: 200px;
     overflow: hidden;
@@ -300,7 +300,7 @@ body {
 }
 
 .timeline-line {
-    width: 2px;
+    width: 1px;
     height: 40px;
     background: #ddd;
     margin: 1rem auto;

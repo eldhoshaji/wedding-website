@@ -117,7 +117,7 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="engagement.html" class="nav-link">Engagement</a>
+                <a href="engagement.html" class="nav-link">Engagement &nbsp;<i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </nav>
@@ -136,7 +136,7 @@
             </div>
         </div>
         <div class="hero-cake">
-            <img src="images/blue-cake.png" alt="Wedding Cake">
+            <img id="hero-cake-img" src="images/blue-cake.png" alt="Wedding Cake">
         </div>
     </section>
 
@@ -210,7 +210,7 @@
                         <div class="card-content">
                             <p class="card-reception">To Follow</p>
                             <p class="card-subtitle">After the ceremony</p>
-                            <a href="#" class="card-button">
+                            <a href="#" class="card-button menu-download-btn disabled">
                                 <i class="fas fa-download"></i>
                                 Download Menu
                             </a>
@@ -285,23 +285,47 @@
 
     <script src="script.js"></script>
     <script>
+
         document.addEventListener('DOMContentLoaded', function() {
             // Parallax scrolling effect
             const heroContent = document.querySelector('.hero-content');
             const storySection = document.querySelector('.story-section');
-            
+            const heroCakeImg = document.getElementById('hero-cake-img');
+            const colorPaletteSection = document.querySelector('.color-palette-section');
+
+            function isSectionInView(section) {
+                const rect = section.getBoundingClientRect();
+                return (
+                    rect.top < window.innerHeight &&
+                    rect.bottom > 0
+                );
+            }
+
             window.addEventListener('scroll', function() {
                 const scrollY = window.scrollY;
                 const windowHeight = window.innerHeight;
-                
-                // Move hero content up as user scrolls
-                if (scrollY <= windowHeight) {
-                    const translateY = scrollY * 0.8; // Increased speed for more dramatic effect
-                    heroContent.style.transform = `translateY(-${translateY}px)`;
+
+                // Only apply parallax effect on screens >= 768px
+                if (window.innerWidth >= 768) {
+                    if (scrollY <= windowHeight) {
+                        const translateY = scrollY * 0.8; // Increased speed for more dramatic effect
+                        heroContent.style.transform = `translateY(-${translateY}px)`;
+                    }
+                } else {
+                    // Reset transform on mobile
+                    heroContent.style.transform = '';
                 }
-                
-                // All sections below will naturally scroll over the fixed first section
-                // No additional JavaScript needed for positioning
+
+                // Hide cake image if color palette section is in view
+                if (colorPaletteSection && heroCakeImg) {
+                    if (isSectionInView(colorPaletteSection)) {
+                        heroCakeImg.style.opacity = '0';
+                        heroCakeImg.style.pointerEvents = 'none';
+                    } else {
+                        heroCakeImg.style.opacity = '1';
+                        heroCakeImg.style.pointerEvents = '';
+                    }
+                }
             });
 
             // Color palette hover effects
@@ -347,12 +371,11 @@
             const eventTitle = "Eldho & Christeena's Wedding";
             const eventDescription = "Join us for our wedding celebration at St. George Jacobite Syrian Cathedral, Karingachira, Ernakulam. A beautiful morning of love, family, and new beginnings.";
             const eventLocation = "St. George Jacobite Syrian Cathedral, Karingachira, Ernakulam, Kerala";
-            const eventStart = "2025-08-30T10:00:00";
-            const eventEnd = "2025-08-30T12:00:00";
+            // Google Calendar expects YYYYMMDDTHHMMSS format (local time)
+            const eventStart = "20250830T100000";
+            const eventEnd = "20250830T140000";
             const mapUrl = "https://www.google.com/maps?rlz=1C1GCEU_en-GBGB1099GB1099&gs_lcrp=EgZjaHJvbWUqDAgBECMYJxiABBiKBTIGCAAQRRg5MgwIARAjGCcYgAQYigUyDQgCEC4YrwEYxwEYgAQyDQgDEC4YrwEYxwEYgAQyBwgEEAAYgAQyBwgFEAAYgAQyDQgGEC4YrwEYxwEYgAQyDQgHEC4YrwEYxwEYgAQyDQgIEC4YrwEYxwEYgAQyBwgJEAAYgATSAQgzOTE3ajBqNKgCALACAQ&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=KQlFYIFecwg7MfWTtY4ri-3P&daddr=Karingachira,+Thrippunithura,+Ernakulam,+Kerala+682301,+India";
-            
             const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&details=${encodeURIComponent(eventDescription + '\n\nMap: ' + mapUrl)}&location=${encodeURIComponent(eventLocation)}`;
-            
             window.open(calendarUrl, '_blank');
         }
     </script>
