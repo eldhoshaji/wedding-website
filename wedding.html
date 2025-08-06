@@ -136,7 +136,7 @@
             </div>
         </div>
         <div class="hero-cake">
-            <img src="images/blue-cake.png" alt="Wedding Cake">
+            <img id="hero-cake-img" src="images/blue-cake.png" alt="Wedding Cake">
         </div>
     </section>
 
@@ -285,23 +285,47 @@
 
     <script src="script.js"></script>
     <script>
+
         document.addEventListener('DOMContentLoaded', function() {
             // Parallax scrolling effect
             const heroContent = document.querySelector('.hero-content');
             const storySection = document.querySelector('.story-section');
-            
+            const heroCakeImg = document.getElementById('hero-cake-img');
+            const colorPaletteSection = document.querySelector('.color-palette-section');
+
+            function isSectionInView(section) {
+                const rect = section.getBoundingClientRect();
+                return (
+                    rect.top < window.innerHeight &&
+                    rect.bottom > 0
+                );
+            }
+
             window.addEventListener('scroll', function() {
                 const scrollY = window.scrollY;
                 const windowHeight = window.innerHeight;
-                
-                // Move hero content up as user scrolls
-                if (scrollY <= windowHeight) {
-                    const translateY = scrollY * 0.8; // Increased speed for more dramatic effect
-                    heroContent.style.transform = `translateY(-${translateY}px)`;
+
+                // Only apply parallax effect on screens >= 768px
+                if (window.innerWidth >= 768) {
+                    if (scrollY <= windowHeight) {
+                        const translateY = scrollY * 0.8; // Increased speed for more dramatic effect
+                        heroContent.style.transform = `translateY(-${translateY}px)`;
+                    }
+                } else {
+                    // Reset transform on mobile
+                    heroContent.style.transform = '';
                 }
-                
-                // All sections below will naturally scroll over the fixed first section
-                // No additional JavaScript needed for positioning
+
+                // Hide cake image if color palette section is in view
+                if (colorPaletteSection && heroCakeImg) {
+                    if (isSectionInView(colorPaletteSection)) {
+                        heroCakeImg.style.opacity = '0';
+                        heroCakeImg.style.pointerEvents = 'none';
+                    } else {
+                        heroCakeImg.style.opacity = '1';
+                        heroCakeImg.style.pointerEvents = '';
+                    }
+                }
             });
 
             // Color palette hover effects
