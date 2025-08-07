@@ -175,7 +175,7 @@
                         </div>
                         <div class="card-content">
                             <p class="card-date">August 30th, 2025</p>
-                            <p class="card-time">10:00 AM</p>
+                            <p class="card-time">11:00 AM</p>
                             <button class="card-button" onclick="saveToCalendar()">
                                 <i class="fas fa-calendar-plus"></i>
                                 Save to Calendar
@@ -372,7 +372,7 @@
             const eventDescription = "Join us for our wedding celebration at St. George Jacobite Syrian Cathedral, Karingachira, Ernakulam. A beautiful morning of love, family, and new beginnings.";
             const eventLocation = "St. George Jacobite Syrian Cathedral, Karingachira, Ernakulam, Kerala";
             // Google Calendar expects YYYYMMDDTHHMMSS format (local time)
-            const eventStart = "20250830T100000";
+            const eventStart = "20250830T110000";
             const eventEnd = "20250830T140000";
             const mapUrl = "https://www.google.com/maps?rlz=1C1GCEU_en-GBGB1099GB1099&gs_lcrp=EgZjaHJvbWUqDAgBECMYJxiABBiKBTIGCAAQRRg5MgwIARAjGCcYgAQYigUyDQgCEC4YrwEYxwEYgAQyDQgDEC4YrwEYxwEYgAQyBwgEEAAYgAQyBwgFEAAYgAQyDQgGEC4YrwEYxwEYgAQyDQgHEC4YrwEYxwEYgAQyDQgIEC4YrwEYxwEYgAQyBwgJEAAYgATSAQgzOTE3ajBqNKgCALACAQ&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=KQlFYIFecwg7MfWTtY4ri-3P&daddr=Karingachira,+Thrippunithura,+Ernakulam,+Kerala+682301,+India";
             const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&details=${encodeURIComponent(eventDescription + '\n\nMap: ' + mapUrl)}&location=${encodeURIComponent(eventLocation)}`;
